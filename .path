@@ -1,0 +1,15 @@
+export GOPATH=/Users/`whoami`/go-workspace
+export GOROOT=/usr/local/go
+export EC2_AMITOOL_HOME=/usr/local/aws/ec2-ami-tools
+export EC2_API_HOME=/usr/local/aws/ec2-api-tools
+export JAVA_HOME=$(/usr/libexec/java_home)
+export RBENV="$HOME/.rbenv"
+# export MVN_PATH=/opt/apache-maven-3.3.9/bin
+export PERL6=/Applications/Radkudo
+
+export PATH="$HOME/bin:$PATH:$RBENV/bin:$GOOROOT/bin:$GOPATH/bin:$PERL6/bin:$EC2_AMITOOL_HOME/bin:$EC2_API_HOME/bin"
+
+# Add `~/bin` to the `$PATH`
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)"
+fi
