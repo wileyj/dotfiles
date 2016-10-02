@@ -1,0 +1,43 @@
+export CPPFLAGS="-I/opt/local/include"
+export LDFLAGS="-L/opt/local/lib"
+
+# Make vim the default editor.
+export EDITOR='vim';
+
+# Enable persistent REPL history for `node`.
+export NODE_REPL_HISTORY=~/.node_history;
+# Allow 32³ entries; the default is 1000.
+export NODE_REPL_HISTORY_SIZE='32768';
+# Use sloppy mode by default, matching web browsers.
+export NODE_REPL_MODE='sloppy';
+
+# Make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
+export PYTHONIOENCODING='UTF-8';
+
+# Increase Bash history size. Allow 32³ entries; the default is 500.
+export HISTSIZE='32768';
+export HISTFILESIZE="${HISTSIZE}";
+# Omit duplicates and commands that begin with a space from history.
+export HISTCONTROL='ignoreboth';
+
+# Prefer US English and use UTF-8.
+export LANG='en_US.UTF-8';
+export LC_ALL='en_US.UTF-8';
+
+# Highlight section titles in manual pages.
+export LESS_TERMCAP_md="${yellow}";
+
+# Don’t clear the screen after quitting a manual page.
+export MANPAGER='less -X';
+
+export GOPATH=/Users/`whoami`/go-workspace
+export GOROOT=/usr/local/go
+export EC2_AMITOOL_HOME=/usr/local/aws/ec2-ami-tools
+export EC2_API_HOME=/usr/local/aws/ec2-api-tools
+export JAVA_HOME=$(/usr/libexec/java_home)
+export RBENV="$HOME/.rbenv"
+export PERL6=/Applications/Radkudo/bin
+export PERL5LIB="/Users/`whoami`/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
+export PERL_LOCAL_LIB_ROOT="/Users/`whoami`/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
+export PERL_MB_OPT="--install_base \"/Users/wileyj/perl5\""
+export PERL_MM_OPT="INSTALL_BASE=/Users/``whoami``/perl5"
