@@ -6,8 +6,8 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export RBENV="$HOME/.rbenv"
 # export MVN_PATH=/opt/apache-maven-3.3.9/bin
 export PERL6=/Applications/Radkudo
-
-export PATH="$HOME/bin:$PATH:$RBENV/bin:$GOOROOT/bin:$GOPATH/bin:$PERL6/bin:$EC2_AMITOOL_HOME/bin:$EC2_API_HOME/bin"
+export BREWPATH=/usr/local/bin:/usr/local/sbin
+export PATH="$BREWPATH:$HOME/bin:$PATH:$RBENV/bin:$GOOROOT/bin:$GOPATH/bin:$PERL6/bin:$EC2_AMITOOL_HOME/bin:$EC2_API_HOME/bin"
 
 # Add `~/bin` to the `$PATH`
 if which rbenv > /dev/null; then
