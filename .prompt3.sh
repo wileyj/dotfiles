@@ -6,7 +6,6 @@
 #  I don't remember where I found this.  o_O
 
 # Reset
-source ~/.git-prompt.sh 
 Color_Off="\[\033[0m\]"       # Text Reset
 
 # Regular Colors

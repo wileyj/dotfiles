@@ -1,8 +1,3 @@
-# Add `~/bin` to the `$PATH`
-if which rbenv > /dev/null; then
-  eval "$(rbenv init -)"
-fi
-
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -12,7 +7,9 @@ done;
 unset file;
 
 for i in `ls ~/.ssh/ | grep -v ".pub" | grep -v "config" | grep -v "known_hosts" | grep -v "authorized" `; do
-  ssh-add  ~/.ssh/$i
+	if [ -f ~/.ssh/$i ]; then
+		ssh-add  ~/.ssh/$i
+	fi
 done
 
 # Case-insensitive globbing (used in pathname expansion)
@@ -32,10 +29,10 @@ for option in autocd globstar; do
 done;
 
 # Add tab completion for many Bash commands
-if which brew > /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
-  source "$(brew --prefix)/share/bash-completion/bash_completion";
-elif [ -f /etc/bash_completion ]; then
-  source /etc/bash_completion;
+#if which brew > /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
+#  source "$(brew --prefix)/share/bash-completion/bash_completion";
+if which brew > /dev/null && [ -f "$(brew --prefix)/etc/bash_completion" ]; then
+	source "$(brew --prefix)/etc/bash_completion";
 fi;
 
 # Enable tab completion for `g` by marking it as an alias for `git`
@@ -50,5 +47,5 @@ fi;
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults;
 
-# Add `killall` tab completion for common apps
-complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal" killall;
+#complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal" killall;
+if [ -e /Users/jesse.wiley/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/jesse.wiley/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
