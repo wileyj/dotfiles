@@ -1,16 +1,10 @@
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{exports,bash_prompt,aliases,functions,extra,path}; do
+for file in ~/.{exports,bash_prompt,aliases,functions,extra,path,ssh-agent}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
-
-for i in `ls ~/.ssh/ | grep -v ".pub" | grep -v "config" | grep -v "known_hosts" | grep -v "authorized" `; do
-	if [ -f ~/.ssh/$i ]; then
-		ssh-add  ~/.ssh/$i
-	fi
-done
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
