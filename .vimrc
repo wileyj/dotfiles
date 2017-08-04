@@ -10,6 +10,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'trusktr/seti.vim'
 Plug 'sickill/vim-monokai'
 Plug 'altercation/vim-colors-solarized'
+
 " Add plugins to &runtimepath
 call plug#end()
 
@@ -165,9 +166,8 @@ endif
 " Enable syntax highlighting
 " syntax enable
 set background=dark
-syntax on
-syntax enable
+"syntax on
+"syntax enable
 let g:solarized_termcolors = 256
 let g:solarized_termtrans = 1
 colorscheme solarized
-
