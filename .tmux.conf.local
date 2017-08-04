@@ -1,0 +1,130 @@
+## The statusbar
+set -g status-position bottom
+set -g status-bg colour234
+set -g status-fg colour137
+set -g status-attr dim
+set -g status-left ''
+set -g status-right '#[fg=colour233,bg=colour241,bold] %d/%m #[fg=colour233,bg=colour245,bold] %H:%M:%S '
+set -g status-right-length 50
+set -g status-left-length 20
+
+setw -g window-status-current-fg colour81
+setw -g window-status-current-bg colour238
+setw -g window-status-current-attr bold
+setw -g window-status-current-format ' #I#[fg=colour250]:#[fg=colour255]#W#[fg=colour50]#F '
+
+setw -g window-status-fg colour138
+setw -g window-status-bg colour235
+setw -g window-status-attr none
+setw -g window-status-format ' #I#[fg=colour237]:#[fg=colour250]#W#[fg=colour244]#F '
+
+setw -g window-status-bell-attr bold
+setw -g window-status-bell-fg colour255
+setw -g window-status-bell-bg colour1
+
+## The messages
+set -g message-attr bold
+set -g message-fg colour232
+set -g message-bg colour166
+
+## The panes
+# set -g pane-border-bg colour235
+# set -g pane-border-fg colour238
+# set -g pane-active-border-bg colour236
+# set -g pane-active-border-fg colour51
+
+## window status
+# setw -g window-status-format " #F#I:#W#F "
+# setw -g window-status-current-format " #F#I:#W#F "
+# setw -g window-status-format "#[fg=magenta]#[bg=black] #I #[bg=cyan]#[fg=colour8] #W "
+# setw -g window-status-current-format "#[bg=brightmagenta]#[fg=colour8] #I #[fg=colour8]#[bg=colour14] #W "
+# setw -g window-status-current-bg colour0
+# setw -g window-status-current-fg colour11
+# setw -g window-status-current-attr dim
+# setw -g window-status-bg green
+# setw -g window-status-fg black
+# setw -g window-status-attr reverse
+
+# focused pane colours:
+tmux_conf_theme_focused_pane_fg='default'
+tmux_conf_theme_focused_pane_bg='#0087d7'               # light blue
+
+# pane border style, possible values are:
+#   - thin (default)
+#   - fat
+tmux_conf_theme_pane_border_style=thin
+
+# pane borders colours:
+tmux_conf_theme_pane_border='#444444'                   # gray
+tmux_conf_theme_pane_active_border='#00afff'            # light blue
+
+# pane indicator colours
+tmux_conf_theme_pane_indicator='#00afff'                # light blue
+tmux_conf_theme_pane_active_indicator='#00afff'         # light blue
+
+# focused pane colours:
+tmux_conf_theme_focused_pane_fg='default'
+tmux_conf_theme_focused_pane_bg='#0087d7'               # light blue
+
+
+# pane borders colours:
+tmux_conf_theme_pane_border='#444444'                   # gray
+tmux_conf_theme_pane_active_border='#00afff'            # light blue
+
+# pane indicator colours
+tmux_conf_theme_pane_indicator='#00afff'                # light blue
+tmux_conf_theme_pane_active_indicator='#00afff'         # light blue
+
+# window current status style
+#   - built-in variables are:
+#     - #{circled_window_index}
+tmux_conf_theme_window_status_current_fg='#000000'      # black
+tmux_conf_theme_window_status_current_bg='#00afff'      # light blue
+tmux_conf_theme_window_status_current_attr='bold'
+tmux_conf_theme_window_status_current_format='#I #W'
+
+# soften status bar color from harsh green to light gray
+set -g status-bg '#666666'
+set -g status-fg '#aaaaaa'
+
+
+# Status line.
+set -g status-fg white
+set -g status-bg black
+set -g status-left ""
+set -g status-right "#{?pane_synchronized, #[bg=blue]SYNCHRONIZED#[default],} #S "
+
+# Window list.
+setw -g window-status-fg colour246 # grey
+setw -g window-status-bg black
+setw -g window-status-attr none
+setw -g window-status-format "#[fg=colour172]#I#[fg=white] #W "
+
+# Active window.
+setw -g window-status-current-fg white
+setw -g window-status-current-bg black
+setw -g window-status-current-attr bright
+setw -g window-status-current-format "#[fg=colour172]#I#[fg=white] #W#F"
+
+# Window activity.
+setw -g window-status-activity-fg colour246 # grey
+setw -g window-status-activity-bg black
+
+# Panes.
+#set -g pane-border-fg white
+#set -g pane-border-bg black
+#set -g pane-active-border-fg blue
+#set -g pane-active-border-bg black
+
+
+set -g pane-border-fg default
+set -g pane-active-border-fg blue
+set -g pane-active-border-bg default
+set -g pane-border-fg white
+set -g pane-border-bg default
+
+
+# Command/message line.
+set -g message-fg white
+set -g message-bg black
+set -g message-attr bright
