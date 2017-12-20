@@ -1,0 +1,6 @@
+ssh-add -D
+for i in `ls ~/.ssh/ | grep -v ".pub" | grep -v "config" | grep -v "known_hosts" | grep -v "authorized" `; do
+	if [ -f ~/.ssh/$i ]; then
+		ssh-add  ~/.ssh/$i
+	fi
+done
