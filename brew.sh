@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # Install command-line tools using Homebrew.
+brew analytics off
 
 # Make sure we’re using the latest Homebrew.
 brew update
@@ -104,4 +105,3 @@ if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
 
 	# Remove outdated versions from the cellar.
 	brew cleanup
-	0Looking

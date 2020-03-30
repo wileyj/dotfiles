@@ -84,6 +84,7 @@
     whitespace = fix
 
 [core]
+    autocrlf = input
     # Use custom `.gitignore` and `.gitattributes`
     excludesfile = ~/.gitignore
     attributesfile = ~/.gitattributes
@@ -137,7 +138,7 @@
 [merge]
     # Include summaries of merged commits in newly created merge commit messages
     log = true
-
+    ff = only
 [push]
     # Use the Git 1.x.x default to avoid errors on machines with old Git
     # installations. To use `simple` instead, add this to your `~/.extra` file:
@@ -166,3 +167,11 @@
 
 [mergetool]
     keepBackup = true
+[merge]
+  ff = only
+# [commit]
+#  template = ~/.gitmessage
+[fetch]
+  prune = true
+[rebase]
+  autosquash = true
