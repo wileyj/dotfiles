@@ -29,7 +29,6 @@ sudo scutil --set LocalHostName "wileyj"
 
 echo -e "\t|- [\033[32m+\033[m] Always boot in verbose mode (not MacOS GUI mode)"
 sudo nvram boot-args="-v"
-
 echo -e "\t|- [\033[32m+\033[m] Enable lid wakeup"
 sudo pmset -a lidwake 1
 echo -e "\t|- [\033[32m+\033[m] Restart automatically on power loss"
@@ -62,6 +61,12 @@ defaults write com.apple.systemuiserver menuExtras -array \
   "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
   "/System/Library/CoreServices/Menu Extras/Battery.menu" \
   "/System/Library/CoreServices/Menu Extras/Clock.menu"
+
+echo -e "\t|- [\033[32m+\033[m] Disable animations when opening and closing windows"
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+
+echo -e "\t|- [\033[32m+\033[m] Disable animations when opening a Quick Look window."
+defaults write -g QLPanelAnimationDuration -float 0
 
 echo -e "\t|- [\033[32m+\033[m] Set sidebar icon size to small"
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
@@ -218,7 +223,7 @@ echo -e "::: Screen Updates"
 echo -e ":::"
 
 echo -e "\t|- [\033[32m+\033[m] Save screenshots to the desktop"
-defaults write com.apple.screencapture location -string "${HOME}/Desktop"
+defaults write com.apple.screencapture location -string "${HOME}/Dropbox/Screenshots/"
 
 echo -e "\t|- [\033[32m+\033[m] Save screenshots in PNG format"
 defaults write com.apple.screencapture type -string "png"
